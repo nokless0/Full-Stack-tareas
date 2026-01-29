@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <!-- para que agarre acentos y eso -->
+  <meta charset="UTF-8" />
+
+  <!-- Para que sea reactivo en otros dispositivos-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Nombre de la pagina -->
+  <title>Gestor de Tareas</title>
+  <link rel="stylesheet" href="styles.css" />
+  <!-- referencia al css-->
+</head>
+ <!-- En el body se se define el panel la utlizacion del boton la clase panel y el como se conque acciones se uli-->
+<body>
+    <h1 id="titulo">Gestor de Tareas</h1>
+    <div class="panel">
+    <input type="text" id="tareaInput" placeholder="Escribe una tarea..." />
+    <button id="btnAgregar">Agregar Tarea</button>
+  </div>
+
+  <!--Aqui se muestran mensajes tipo error o que si se agregó -->
+  <p id="mensaje" class="mensaje oculto"></p>
+
+  <!-- Definicion de lista que se utilizara con su id(la lista esta vacia para comprobar que si se guarda cada elemento agregado) -->
+  <ul id="listaTareas"></ul>
+
+  <!-- REFERENCIA AL JAVASCRIPT -->
+  <script src="script.js"></script>
+</body>
+</html>
+     
