@@ -1,0 +1,24 @@
+{
+  "name": "backend-veterinaria",
+  "version": "1.0.0",
+  "description": "Sistema de citas para veterinaria con Node.js, Express y MongoDB",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [
+    "node",
+    "express",
+    "mongodb",
+    "veterinaria"
+  ],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "express": "^5.2.1",
+    "mongoose": "^9.1.6"
+  }
+}
+

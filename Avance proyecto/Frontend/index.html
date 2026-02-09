@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- METADATOS Y ENLACE A CSS -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veterinaria "Perrito gua gua" Citas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>Programador de citas de Veterinaria "Perrito gua gua"</h1>
+
+    <button id="btnNuevaCita">Programar nueva cita</button>
+<!-- FORMULARIO PARA CREAR NUEVA CITA, INICIALMENTE OCULTO -->
+    <div id="formCita">
+        <h2>Nueva Cita</h2>
+        <form>
+            <div>
+                <label>Nombre de la mascota: </label>
+                <input type="text" id="nombre">
+            </div>
+
+            <div>
+                <label>Especie: </label>
+                <input type="text" id="especie">
+            </div>
+
+            <div>
+                <label>Fecha: </label>
+                <input type="date" id="fecha">
+            </div>
+
+            <div>
+                <label>Tratamiento: </label>
+                <input type="text" id="tratamiento">
+            </div>
+
+            <div>
+                <button type="submit">Generar Cita</button>
+                <button type="button" id="btnCancel">Cancelar</button>
+            </div>
+        </form>
+    </div>
+
+    <h3>Citas disponibles</h3>
+    <!-- AQUÍ SE INSERTAN LAS CITAS DESDE MONGODB -->
+    <div id="listaCitas"></div>
+    <!-- ENLACE A JAVASCRIPT -->
+    <script src="app.js"></script>
+</body>
+</html>

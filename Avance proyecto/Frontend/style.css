@@ -1,0 +1,218 @@
+/* ============================
+   VARIABLES
+============================ */
+:root {
+  --primario: #2c7be5;
+  --secundario: #00b894;
+  --peligro: #d63031;
+  --fondo: #f5f7fa;
+  --blanco: #ffffff;
+  --texto: #2d3436;
+  --gris: #636e72;
+  --sombra: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+/* ============================
+   RESET
+============================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* ============================
+   BODY
+============================ */
+body {
+  background: linear-gradient(135deg, #e0eafc, #cfdef3);
+  min-height: 100vh;
+  padding: 30px;
+  color: var(--texto);
+}
+
+/* ============================
+   TITULOS
+============================ */
+h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: var(--primario);
+}
+
+h3 {
+  color: var(--primario);
+  margin-bottom: 8px;
+}
+
+/* ============================
+   BOTÓN NUEVA CITA
+============================ */
+#btnNuevaCita {
+  display: block;
+  margin: 25px auto;
+  padding: 14px 30px;
+  background: linear-gradient(135deg, var(--primario), #1e5ac8);
+  color: var(--blanco);
+  border: none;
+  border-radius: 30px;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: var(--sombra);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+#btnNuevaCita:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* ============================
+   FORMULARIO
+============================ */
+#formCita {
+  background: var(--blanco);
+  max-width: 420px;
+  margin: 0 auto 30px auto;
+  padding: 25px;
+  border-radius: 16px;
+  box-shadow: var(--sombra);
+  animation: aparecer 0.4s ease;
+}
+
+#formCita label {
+  display: block;
+  margin-top: 12px;
+  font-weight: 600;
+  color: var(--gris);
+}
+
+#formCita input {
+  width: 100%;
+  padding: 10px 12px;
+  margin-top: 5px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  outline: none;
+  transition: border 0.2s ease;
+}
+
+#formCita input:focus {
+  border-color: var(--primario);
+}
+
+/* ============================
+   BOTONES FORM
+============================ */
+#formCita button {
+  margin-top: 18px;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+#formCita button[type="submit"] {
+  background: var(--secundario);
+  color: var(--blanco);
+}
+
+#formCita button[type="submit"]:hover {
+  background: #00a383;
+}
+
+#btnCancel {
+  background: #b2bec3;
+  color: #2d3436;
+}
+
+/* ============================
+   LISTA DE CITAS
+============================ */
+#listaCitas {
+  max-width: 900px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+/* ============================
+   TARJETA CITA
+============================ */
+#listaCitas div {
+  background: var(--blanco);
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: var(--sombra);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+#listaCitas div:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 35px rgba(0, 0, 0, 0.12);
+}
+
+#listaCitas p {
+  margin-bottom: 6px;
+  color: var(--gris);
+}
+
+/* ============================
+   BOTONES EDITAR / ELIMINAR
+============================ */
+#listaCitas button {
+  margin-top: 10px;
+  margin-right: 6px;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 13px;
+  transition: transform 0.15s ease, opacity 0.15s ease;
+}
+
+#listaCitas button:first-of-type {
+  background: var(--primario);
+  color: var(--blanco);
+}
+
+#listaCitas button:last-of-type {
+  background: var(--peligro);
+  color: var(--blanco);
+}
+
+#listaCitas button:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+/* ============================
+   ANIMACIONES
+============================ */
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ============================
+   RESPONSIVE
+============================ */
+@media (max-width: 600px) {
+  body {
+    padding: 15px;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+}
