@@ -1,0 +1,135 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  color: white;
+}
+
+/* TITULO */
+h1 {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 2.5rem;
+  letter-spacing: 2px;
+}
+
+/* FORM */
+form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin: 30px 0;
+}
+
+form input {
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  min-width: 180px;
+}
+
+form button {
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  background: #00c6ff;
+  color: black;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+form button:hover {
+  background: #00f2fe;
+  transform: scale(1.05);
+}
+
+/* GRID DE CITAS */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+/* CARD */
+.card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
+  padding: 20px;
+  transition: 0.4s;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.6);
+}
+
+/* HEADER */
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.card-header h3 {
+  margin: 0;
+  font-size: 1.4rem;
+  color: #00f2fe;
+}
+
+.fecha {
+  font-size: 0.8rem;
+  background: #00c6ff;
+  padding: 5px 10px;
+  border-radius: 20px;
+  color: black;
+}
+
+/* BODY */
+.card-body p {
+  margin: 5px 0;
+  font-size: 0.9rem;
+}
+
+/* BOTONES */
+.card-actions {
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn-edit {
+  background: #00ff99;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.btn-edit:hover {
+  background: #00cc77;
+  transform: scale(1.05);
+}
+
+.btn-delete {
+  background: #ff4d4d;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.btn-delete:hover {
+  background: #ff1a1a;
+  transform: scale(1.05);
+}
