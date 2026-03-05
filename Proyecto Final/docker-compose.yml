@@ -1,0 +1,77 @@
+# ==================== DOCKER COMPOSE ====================
+# Para ejecutar todo el proyecto con un solo comando
+# Uso: docker-compose up --build
+
+version: '3.8'
+
+services:
+  # Base de datos MongoDB
+  mongodb:
+    image: mongo:latest
+    container_name: vetcare-mongodb
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb_data:/data/db
+    command: ["--bind_ip", "0.0.0.0"]
+    networks:
+      - vetcare-network
+
+  # Backend (API)
+  backend:
+    build: ./backend
+    container_name: vetcare-backend
+    ports:
+      - "5000:5000"
+    environment:
+      - NODE_ENV=development
+      - MONGO_URI=mongodb://mongodb:27017/vetcare
+      - JWT_SECRET=vetcare_secret_key_2024
+    depends_on:
+      - mongodb
+    networks:
+      - vetcare-network
+    volumes:
+      - ./backend:/app
+      - /app/node_modules
+
+  # Interfaz web para MongoDB
+  mongo-express:
+    image: mongo-express:latest
+    container_name: vetcare-mongo-express
+    ports:
+      - "8081:8081"
+    environment:
+      - ME_CONFIG_MONGODB_URL=mongodb://mongodb:27017
+      - ME_CONFIG_BASICAUTH=false
+    depends_on:
+      - mongodb
+    networks:
+      - vetcare-network
+
+  # Frontend (React)
+  frontend:
+    build: ./frontend
+    container_name: vetcare-frontend
+    ports:
+      - "3000:3000"
+    environment:
+      - REACT_APP_API_URL=http://localhost:5000/api
+    depends_on:
+      - backend
+    networks:
+      - vetcare-network
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    stdin_open: true
+    tty: true
+
+# Volúmenes para persistir datos
+volumes:
+  mongodb_data:
+
+# Red para comunicar servicios
+networks:
+  vetcare-network:
+    driver: bridge
